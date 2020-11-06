@@ -3,7 +3,7 @@ import { jsx, Container, Flex, Box } from "theme-ui";
 import Head from "next/head";
 import Header from "components/Header";
 
-const DefaultLayout: React.FC<{ frontMatter: any }> = ({
+const DefaultLayout: React.FC<{ frontMatter?: any }> = ({
   children,
   frontMatter = {},
 }) => {
