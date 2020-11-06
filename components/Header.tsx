@@ -43,7 +43,7 @@ const Header: React.FC<{}> = ({}) => {
       </Box>
       <Flex as="nav" mt={20} sx={{ flexDirection: "column" }}>
           <Box>
-              <NextLink href="/" passHref>
+              <NextLink href="/archive" passHref>
                   <Link>archive</Link>
               </NextLink>
           </Box>

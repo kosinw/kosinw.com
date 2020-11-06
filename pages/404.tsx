@@ -1,8 +1,13 @@
 import { Heading, Container, Text, Flex, Link } from "theme-ui";
 import { NextPage } from "next";
 import NextLink from "next/link";
+import Head from "next/head";
 
 const NotFoundPage: NextPage = ({}) => (
+  <>
+  <Head>
+    <title>kosinw.com/404</title>
+  </Head>
   <Flex
     sx={{ flexDirection: "column", height: "100vh", justifyContent: "center" }}
   >
@@ -17,6 +22,7 @@ const NotFoundPage: NextPage = ({}) => (
       </Flex>
     </Container>
   </Flex>
+  </>
 );
 
 export default NotFoundPage;

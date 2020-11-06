@@ -1,4 +1,6 @@
-export default {
+import { Theme } from "theme-ui";
+
+const theme: Partial<Theme> = {
   colors: {
     text: "#d0d0d0",
     background: "#101010",
@@ -21,53 +23,64 @@ export default {
     body: 1.5,
     heading: 1.25,
   },
-  textStyles: {
+  text: {
     heading: {
       fontFamily: "heading",
       fontWeight: "heading",
       lineHeight: "heading",
+      mt: 20,
     },
     display: {
-      variant: "textStyles.heading",
+      variant: "text.heading",
       fontSize: [5, 6],
       fontWeight: "display",
       letterSpacing: "-0.03em",
-      mt: 3,
+      my: 20,
+    },
+    body: {
+      fontWeight: "body",
+      fontSize: "15px",
+    },
+  },
+  forms: {
+    input: {
+      pl: 3,
+      fontSize: 1,
+      borderRadius: 0
     },
   },
   styles: {
-    Container: {
-      p: 3,
-      maxWidth: 1024,
-    },
     root: {
       fontFamily: "body",
       lineHeight: "body",
       fontWeight: "body",
     },
     h1: {
-      variant: "textStyles.display",
-      my: 20
+      variant: "text.display",
     },
     h2: {
-      variant: "textStyles.heading",
+      variant: "text.heading",
       fontSize: 5,
     },
     h3: {
-      variant: "textStyles.heading",
+      variant: "text.heading",
       fontSize: 4,
     },
     h4: {
-      variant: "textStyles.heading",
+      variant: "text.heading",
       fontSize: 3,
     },
     h5: {
-      variant: "textStyles.heading",
+      variant: "text.heading",
       fontSize: 2,
     },
     h6: {
-      variant: "textStyles.heading",
+      variant: "text.heading",
       fontSize: 1,
+    },
+    p: {
+      variant: "text.body",
+      my: 20,
     },
     a: {
       color: "text",
@@ -76,28 +89,6 @@ export default {
       "&:hover": {
         borderBottom: "1px dotted",
       },
-    },
-    pre: {
-      variant: "prism",
-      fontFamily: "monospace",
-      fontSize: 1,
-      p: 3,
-      color: "text",
-      bg: "muted",
-      overflow: "auto",
-      code: {
-        color: "inherit",
-      },
-    },
-    code: {
-      fontFamily: "monospace",
-      color: "secondary",
-      fontSize: 1,
-    },
-    inlineCode: {
-      fontFamily: "monospace",
-      color: "secondary",
-      bg: "muted",
     },
     table: {
       width: "100%",
@@ -130,21 +121,6 @@ export default {
       maxWidth: "100%",
     },
   },
-  prism: {
-    ".comment,.prolog,.doctype,.cdata,.punctuation,.operator,.entity,.url": {
-      color: "gray",
-    },
-    ".comment": {
-      fontStyle: "italic",
-    },
-    ".property,.tag,.boolean,.number,.constant,.symbol,.deleted,.function,.class-name,.regex,.important,.variable": {
-      color: "purple",
-    },
-    ".atrule,.attr-value,.keyword": {
-      color: "primary",
-    },
-    ".selector,.attr-name,.string,.char,.builtin,.inserted": {
-      color: "secondary",
-    },
-  },
 };
+
+export default theme;
