@@ -1,3 +1,9 @@
 [build]
   command = "npm run build && npm run export"
   publish = "out"
+
+[[redirects]]
+  from = "/archive"
+  to = "/"
+  status = 301
+  force = true
