@@ -1,15 +1,23 @@
 import { Theme } from "theme-ui";
 
 const theme: Partial<Theme> = {
+  initialColorModeName: "dark",
   colors: {
     text: "#d0d0d0",
     background: "#101010",
     faded: "#9c9c9c",
     primary: "#3cf",
+    modes: {
+      light: {
+        text: "#101010",
+        background: "#d0d0d0",
+        faded: "#404040",
+      },
+    },
   },
   fonts: {
     body:
-      'Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+      'Fira Mono, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: "inherit",
     monospace: "Fira Mono, Menlo, monospace",
   },
@@ -40,13 +48,15 @@ const theme: Partial<Theme> = {
     body: {
       fontWeight: "body",
       fontSize: "15px",
+      fontFamily: "body",
     },
   },
   forms: {
     input: {
       pl: 3,
+      variant: "text.body",
       fontSize: 1,
-      borderRadius: 0
+      borderRadius: 0,
     },
   },
   styles: {

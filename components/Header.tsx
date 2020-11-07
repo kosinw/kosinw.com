@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import NextLink from "next/link";
 import { jsx, Flex, Link, Box } from "theme-ui";
+import ColorThemeButton from "components/ColorThemeButton";
 
 const PrimaryLink: React.FC<{ href?: string; fontWeight?: string }> = ({
   children,
@@ -31,32 +32,39 @@ const PrimaryLink: React.FC<{ href?: string; fontWeight?: string }> = ({
 const Header: React.FC<{}> = ({}) => {
   return (
     <Flex mt={140} as="header" sx={{ flexDirection: "column" }}>
-      <Box>
-        <NextLink href="/" passHref>
-          <PrimaryLink>Kosi Nwabueze</PrimaryLink>
-        </NextLink>
-      </Box>
-      <Box>
-        <NextLink href="/" passHref>
-          <PrimaryLink fontWeight="bold">Website</PrimaryLink>
-        </NextLink>
-      </Box>
+      <Flex sx={{ justifyContent: "space-between" }}>
+        <Flex sx={{ flexDirection: "column" }}>
+          <Box>
+            <NextLink href="/" passHref>
+              <PrimaryLink>Kosi Nwabueze</PrimaryLink>
+            </NextLink>
+          </Box>
+          <Box>
+            <NextLink href="/" passHref>
+              <PrimaryLink fontWeight="bold">Website</PrimaryLink>
+            </NextLink>
+          </Box>
+        </Flex>
+        <Box>
+          <ColorThemeButton />
+        </Box>
+      </Flex>
       <Flex as="nav" mt={20} sx={{ flexDirection: "column" }}>
-          <Box>
-              <NextLink href="/archive" passHref>
-                  <Link>archive</Link>
-              </NextLink>
-          </Box>
-          <Box>
-              <NextLink href="/about" passHref>
-                  <Link>about</Link>
-              </NextLink>
-          </Box>
-          <Box>
-              <NextLink href="/projects" passHref>
-                  <Link>projects</Link>
-              </NextLink>
-          </Box>
+        <Box>
+          <NextLink href="/archive" passHref>
+            <Link>archive</Link>
+          </NextLink>
+        </Box>
+        <Box>
+          <NextLink href="/about" passHref>
+            <Link>about</Link>
+          </NextLink>
+        </Box>
+        <Box>
+          <NextLink href="/projects" passHref>
+            <Link>projects</Link>
+          </NextLink>
+        </Box>
       </Flex>
     </Flex>
   );
