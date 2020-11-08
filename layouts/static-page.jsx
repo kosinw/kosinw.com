@@ -1,11 +1,7 @@
 import Layout from "components/Layout";
 import StaticPageSeo from "components/StaticPageSeo";
-import { PostMetadata } from "types/PostMetadata";
 
-const StaticPage: React.FC<{ frontMatter: PostMetadata }> = ({
-  frontMatter,
-  children,
-}) => {
+const StaticPage = ({ frontMatter, children }) => {
   return (
     <>
       <StaticPageSeo {...frontMatter} />

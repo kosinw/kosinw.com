@@ -1,11 +1,7 @@
 import Layout from "components/Layout";
 import ArticleSeo from "components/ArticleSeo";
-import { PostMetadata } from "types/PostMetadata";
 
-const ArticlePage: React.FC<{ frontMatter: PostMetadata }> = ({
-  frontMatter,
-  children,
-}) => {
+const ArticlePage = ({ frontMatter, children }) => {
   return (
     <>
       <ArticleSeo {...frontMatter} />

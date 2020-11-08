@@ -20,5 +20,5 @@
     "baseUrl": "."
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": ["**/*.ts", "**/*.tsx", "layouts/static-page.jsx", "layouts/index.jsx"]
 }
