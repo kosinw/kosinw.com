@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { Box, Flex, Input, Link, jsx } from "theme-ui";
-import { useMemo, useState } from "react";
-import { PostMetadata } from "lib/archive";
+import { useState } from "react";
+import { PostMetadata } from "types/PostMetadata";
+import { useSearch } from "lib/search";
 import NextLink from "next/link";
 
 const ArchiveLink: React.FC<{ slug: string }> = ({ slug, children }) => {
@@ -27,28 +28,20 @@ const ArchiveItem: React.FC<PostMetadata> = ({ title, slug, date }) => {
       <Box as="span">
         <ArchiveLink slug={slug!}>{title}</ArchiveLink>
       </Box>
-      <Box as="time" sx={{ whiteSpace: "nowrap" }}>
+      <Box
+      as="time"
+      >
         {!!date && date}
       </Box>
     </Flex>
   );
 };
 
-const Archives: React.FC<{ posts: PostMetadata[]; filter: string }> = ({
+const ArchiveItems: React.FC<{ posts: PostMetadata[]; filter: string }> = ({
   posts,
   filter,
 }) => {
-  const [filtered, setFiltered] = useState<PostMetadata[]>([]);
-
-  useMemo(() => {
-    if (filter.length > 0) {
-      setFiltered(
-        posts.filter((post) => post.title!.toLowerCase().includes(filter))
-      );
-    } else {
-      setFiltered(posts);
-    }
-  }, [filter]);
+  const filtered = useSearch(posts, ["title", "date", "keywords"], filter);
 
   return (
     <Flex as="ol" p={0} sx={{ flexDirection: "column" }}>
@@ -72,7 +65,7 @@ const ArchiveList: React.FC<{ posts: PostMetadata[] }> = ({ posts }) => {
         />
       </Flex>
       <Box mt={4}>
-        <Archives filter={filter} posts={posts} />
+        <ArchiveItems filter={filter} posts={posts} />
       </Box>
     </Box>
   );

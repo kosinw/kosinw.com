@@ -15,13 +15,8 @@ export default class extends Document {
 
   render() {
     return (
-      <Html lang="en">
-        <Head>
-          <link
-            href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap"
-            rel="stylesheet"
-          />
-        </Head>
+      <Html lang="en">     
+        <Head />
         <body>
           <InitializeColorMode />
           <Main />

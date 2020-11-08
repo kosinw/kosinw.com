@@ -2,18 +2,12 @@ import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
 import { format, parse } from "date-fns";
+import { PostMetadata } from "../types/PostMetadata";
 
 const archiveDir = join(process.cwd(), "pages/archive");
 
 export function getPostSlugs() {
   return fs.readdirSync(archiveDir);
-}
-
-export interface PostMetadata {
-  title?: string;
-  slug?: string;
-  date?: string | Date;
-  [x: string]: any;
 }
 
 export function getPostBySlug(slug: string, fields: string[] = []) {
@@ -37,7 +31,7 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   return dict;
 }
 
-export function getAllPosts(fields: string[] = []) {
+export function getAllPosts(fields: string[] = []): PostMetadata[] {
   const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))

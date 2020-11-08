@@ -1,17 +1,17 @@
 import Layout from "components/Layout";
-import ArticleSeo from "components/ArticleSeo";
+import StaticPageSeo from "components/StaticPageSeo";
 import { PostMetadata } from "types/PostMetadata";
 
-const ArticlePage: React.FC<{ frontMatter: PostMetadata }> = ({
+const StaticPage: React.FC<{ frontMatter: PostMetadata }> = ({
   frontMatter,
   children,
 }) => {
   return (
     <>
-      <ArticleSeo {...frontMatter} />
+      <StaticPageSeo {...frontMatter} />
       <Layout>{children}</Layout>
     </>
   );
 };
 
-export default ArticlePage;
+export default StaticPage;

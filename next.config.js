@@ -12,7 +12,7 @@ const enhanced = withMdxEnhanced({
     process: (mdxContent, frontMatter) => {},
     phase: "prebuild|loader|both",
   },
-  reExportDataFetching: false,
+  reExportDataFetching: true,
 })(/* your normal nextjs config */);
 
 module.exports = {

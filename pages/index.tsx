@@ -1,16 +1,18 @@
-import { NextPage, GetStaticProps } from "next";
+import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import { Styled, Link } from "theme-ui";
-import DefaultLayout from "layouts";
+import DefaultLayout from "components/Layout";
 import ArchiveList from "components/ArchiveList";
 import NextLink from "next/link";
-import { getAllPosts, PostMetadata } from "lib/archive";
+import { getAllPosts } from "lib/archive";
+import { PostMetadata } from "types/PostMetadata";
 
-const IndexPage: NextPage<{ posts: PostMetadata[] }> = ({ posts }) => {
+type IndexPageProps = InferGetStaticPropsType<typeof getStaticProps>;
+
+const IndexPage: NextPage<IndexPageProps> = ({ posts }) => {
   return (
-    <DefaultLayout frontMatter={{ title: "Archive" }}>
+    <DefaultLayout>
       <Styled.p>
-        This is my personal website that archives all the cool things I've
-        discovered and made. My website was built using{" "}
+        My website was built using{" "}
         <NextLink href="https://nextjs.org/" passHref>
           <Link>Next.js</Link>
         </NextLink>
@@ -35,8 +37,10 @@ const IndexPage: NextPage<{ posts: PostMetadata[] }> = ({ posts }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
-  const posts = getAllPosts(["title", "date", "slug"]);
+export const getStaticProps: GetStaticProps<{
+  posts: PostMetadata[];
+}> = async () => {
+  const posts = getAllPosts(["title", "date", "slug", "keywords", "summary"]);
 
   return {
     props: { posts },

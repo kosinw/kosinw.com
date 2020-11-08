@@ -18,7 +18,7 @@ const ColorThemeButton: React.FC<{}> = ({}) => {
       {colorMode === "dark" ? (
         <HiOutlineMoon size={20} />
       ) : (
-        <HiOutlineSun size={20} />
+        colorMode === "light" && <HiOutlineSun size={20} />
       )}
     </IconButton>
   );

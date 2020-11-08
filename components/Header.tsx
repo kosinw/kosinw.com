@@ -3,29 +3,28 @@ import NextLink from "next/link";
 import { jsx, Flex, Link, Box } from "theme-ui";
 import ColorThemeButton from "components/ColorThemeButton";
 
-const PrimaryLink: React.FC<{ href?: string; fontWeight?: string }> = ({
+const PrimaryLink: React.FC<{ fontWeight?: string }> = ({
   children,
-  href,
   fontWeight,
 }) => {
   return (
-    <Link
-      href={href}
-      sx={{
-        lineHeight: 1.25,
-        fontSize: 2,
-        fontFamily: "monospace",
-        textTransform: "uppercase",
-        borderBottom: "none",
-        "&:hover": {
+    <NextLink href="/" passHref>
+      <Link
+        sx={{
+          lineHeight: 1.25,
+          fontSize: 2,
+          textTransform: "uppercase",
           borderBottom: "none",
-          color: "faded",
-        },
-        fontWeight,
-      }}
-    >
-      {children}
-    </Link>
+          "&:hover": {
+            borderBottom: "none",
+            color: "faded",
+          },
+          fontWeight,
+        }}
+      >
+        {children}
+      </Link>
+    </NextLink>
   );
 };
 
@@ -35,14 +34,10 @@ const Header: React.FC<{}> = ({}) => {
       <Flex sx={{ justifyContent: "space-between" }}>
         <Flex sx={{ flexDirection: "column" }}>
           <Box>
-            <NextLink href="/" passHref>
-              <PrimaryLink>Kosi Nwabueze</PrimaryLink>
-            </NextLink>
+            <PrimaryLink>Kosi Nwabueze</PrimaryLink>
           </Box>
           <Box>
-            <NextLink href="/" passHref>
-              <PrimaryLink fontWeight="bold">Website</PrimaryLink>
-            </NextLink>
+            <PrimaryLink fontWeight="bold">Website</PrimaryLink>
           </Box>
         </Flex>
         <Box>
