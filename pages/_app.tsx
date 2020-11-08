@@ -4,12 +4,10 @@ import { DefaultSeo } from "next-seo";
 import Head from "next/head";
 import SEO from "next-seo.config";
 import theme from "theme";
-import GoogleFonts from "next-google-fonts";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <GoogleFonts href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" />
+    <>      
       <DefaultSeo {...SEO} />
       <Head>
         <meta charSet="utf-8" />
@@ -22,6 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
           name="google-site-verification"
           content="vEwHv2KY3YjoP97DobMGG7gTSmHnVlSI7FTVLqOaKaE"
         />
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet" />
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com/"

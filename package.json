@@ -21,7 +21,6 @@
     "date-fns": "^2.16.1",
     "gray-matter": "^4.0.2",
     "next": "latest",
-    "next-google-fonts": "^1.2.1",
     "next-mdx-enhanced": "^5.0.0",
     "next-seo": "^4.15.1",
     "react": "^16.12.0",
