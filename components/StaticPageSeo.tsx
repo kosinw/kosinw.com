@@ -11,8 +11,8 @@ const StaticPageSeo: React.FC<PostMetadata> = ({
     <NextSeo
       title={`${title} - kosinw.com`}
       description={summary}
-      canonical={slug}      
-      openGraph={{        
+      canonical={slug}
+      openGraph={{
         type: "article",
         article: {
           publishedTime: date! as string,

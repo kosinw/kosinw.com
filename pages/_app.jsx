@@ -1,11 +1,16 @@
-import { AppProps } from "next/app";
 import { ThemeProvider } from "theme-ui";
 import { DefaultSeo } from "next-seo";
 import Head from "next/head";
 import SEO from "next-seo.config";
 import theme from "theme";
+import Prism from "@theme-ui/prism";
 
-export default function App({ Component, pageProps }: AppProps) {
+const components = {
+  pre: ({ children }) => <>{children}</>,
+  code: Prism,
+}
+
+export default function App({ Component, pageProps }) {
   return (
     <>      
       <DefaultSeo {...SEO} />
@@ -27,7 +32,7 @@ export default function App({ Component, pageProps }: AppProps) {
           crossOrigin=""
         />
       </Head>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme} components={components}>
         <Component {...pageProps} />
       </ThemeProvider>
     </>

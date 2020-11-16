@@ -1,5 +1,5 @@
 const title = "kosinw.com";
-const description = "Portfolio, projects, and archived writings.";
+const description = "Systems programmer wannabe and anti-OOP revolutionary.";
 
 const SEO = {
   title,
@@ -11,6 +11,14 @@ const SEO = {
     title,
     description,
   },
+  images: [
+    {
+      url: "https://kosinw.com/static/favicons/favicon-32x32.png",
+      alt: title,
+      width: 32,
+      height: 32
+    }
+  ]
 };
 
 export default SEO;

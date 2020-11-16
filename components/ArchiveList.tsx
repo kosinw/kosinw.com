@@ -13,7 +13,7 @@ const ArchiveLink: React.FC<{ slug: string }> = ({ slug, children }) => {
   );
 };
 
-const ArchiveItem: React.FC<PostMetadata> = ({ title, slug, date }) => {
+ const ArchiveItem: React.FC<PostMetadata> = ({ title, slug, date }) => {
   return (
     <Flex
       as="li"
@@ -25,7 +25,12 @@ const ArchiveItem: React.FC<PostMetadata> = ({ title, slug, date }) => {
       }}
       my={1}
     >
-      <Box as="span">
+      <Box as="span" sx={{
+        maxWidth: 300,
+        textOverflow: "ellipsis",
+        overflow: "hidden",
+        whiteSpace: "nowrap"
+      }}>
         <ArchiveLink slug={slug!}>{title}</ArchiveLink>
       </Box>
       <Box

@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "alwaysStrict": true,
+    "alwaysStrict": false,
+    "checkJs": false,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
@@ -15,10 +16,10 @@
     "noUnusedParameters": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
     "target": "esnext",
     "baseUrl": "."
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx", "layouts/static-page.jsx", "layouts/index.jsx"]
+  "include": ["**/*.ts", "**/*.tsx", "layouts/static-page.jsx", "layouts/index.jsx", "scripts/generate-sitemap.js", "pages/_app.jsx"]
 }

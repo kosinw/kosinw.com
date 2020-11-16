@@ -1,22 +1,17 @@
 // next.config.js
 const withMdxEnhanced = require("next-mdx-enhanced");
 
-const enhanced = withMdxEnhanced({
+module.exports = withMdxEnhanced({
   layoutPath: "layouts",
   defaultLayout: true,
-  fileExtensions: ["mdx"],
   remarkPlugins: [],
   rehypePlugins: [],
-  usesSrc: false,
   extendFrontMatter: {
     process: (mdxContent, frontMatter) => {},
     phase: "prebuild|loader|both",
   },
   reExportDataFetching: true,
-})(/* your normal nextjs config */);
-
-module.exports = {
-  ...enhanced,
+})({
   async redirects() {
     return [
       {
@@ -26,4 +21,11 @@ module.exports = {
       },
     ];
   },
-};
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      require("./scripts/generate-sitemap");
+    }
+
+    return config;
+  },
+});

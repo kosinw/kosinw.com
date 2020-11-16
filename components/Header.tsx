@@ -44,7 +44,7 @@ const Header: React.FC<{}> = ({}) => {
           <ColorThemeButton />
         </Box>
       </Flex>
-      <Flex as="nav" mt={20} sx={{ flexDirection: "column" }}>
+      <Flex as="nav" mt={20} sx={{ flexDirection: "column", fontSize: "15px" }}>
         <Box>
           <NextLink href="/archive" passHref>
             <Link>archive</Link>
@@ -58,6 +58,11 @@ const Header: React.FC<{}> = ({}) => {
         <Box>
           <NextLink href="/projects" passHref>
             <Link>projects</Link>
+          </NextLink>
+        </Box>
+        <Box>
+          <NextLink href="/static/cv/kosi-cv-summer-2020.pdf" passHref>
+            <Link>cv</Link>
           </NextLink>
         </Box>
       </Flex>

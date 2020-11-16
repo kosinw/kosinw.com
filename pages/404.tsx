@@ -11,7 +11,7 @@ const NotFoundPage: NextPage = ({}) => (
   <Flex
     sx={{ flexDirection: "column", height: "100vh", justifyContent: "center" }}
   >
-    <Container sx={{ maxWidth: 550, mx: "auto" }}>
+    <Container sx={{ maxWidth: 550, px: 20, mx: "auto" }}>
       <Flex sx={{ flexDirection: "column" }}>
         <Heading as="h1">404.</Heading>
         <Text>

@@ -6,7 +6,8 @@ const theme: Partial<Theme> = {
     text: "#d0d0d0",
     background: "#101010",
     faded: "#9c9c9c",
-    primary: "#3cf",
+    primary: "#5AAA95",
+    secondary: "#EF5D60",
     modes: {
       light: {
         text: "#101010",
@@ -47,8 +48,13 @@ const theme: Partial<Theme> = {
     },
     body: {
       fontWeight: "body",
-      fontSize: "15px",
+      fontSize: "14px",
       fontFamily: "body",
+    },
+    monospace: {
+      fontFamily: "monospace",
+      fontSize: "14px",
+      fontWeight: "body",
     },
   },
   forms: {
@@ -70,19 +76,19 @@ const theme: Partial<Theme> = {
     },
     h2: {
       variant: "text.heading",
-      fontSize: 5,
+      fontSize: 3,
     },
     h3: {
       variant: "text.heading",
-      fontSize: 4,
+      fontSize: 2,
     },
     h4: {
       variant: "text.heading",
-      fontSize: 3,
+      fontSize: 1,
     },
     h5: {
       variant: "text.heading",
-      fontSize: 2,
+      fontSize: 1,
     },
     h6: {
       variant: "text.heading",
@@ -99,6 +105,10 @@ const theme: Partial<Theme> = {
       "&:hover": {
         borderBottom: "1px dotted",
       },
+    },
+    li: {
+      variant: "text.body",
+      my: 1,
     },
     table: {
       width: "100%",
@@ -129,6 +139,24 @@ const theme: Partial<Theme> = {
     },
     img: {
       maxWidth: "100%",
+    },
+    code: {
+      variant: "text.monospace",
+      ".comment,.prolog,.doctype,.cdata,.punctuation,.operator,.entity,.url": {
+        color: "gray",
+      },
+      ".comment": {
+        fontStyle: "italic",
+      },
+      ".property, .tag, .boolean, .number, .constant, .symbol, .deleted, .function, .class-name, .regex, .important, .variable": {
+        color: "accent",
+      },
+      ".atrule, .attr-value, .keyword": {
+        color: "primary",
+      },
+      ".selector, .attr-name, .string, .char, .builtin, .inserted": {
+        color: "secondary",
+      },
     },
   },
 };
