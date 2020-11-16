@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import NextLink from "next/link";
-import { jsx, Link, Text, Flex, Box } from "theme-ui";
+import { jsx, Link, Text, Box } from "theme-ui";
 import { GoMarkGithub } from "react-icons/go";
 
 const Footer: React.FC<{}> = ({}) => {
