@@ -11,17 +11,18 @@ const ArticlePage = ({ frontMatter, children }) => {
     "MMM do"
   );
 
+  const titleSlug = frontMatter.title
+    .toLowerCase()
+    .replace(/[^\w ]+/g, "")
+    .replace(/ +/g, "-");
+
   return (
     <>
       <ArticleSeo {...frontMatter} />
       <Layout>
-        <Box mt={20} mb={40}>
-          <NextLink href="/archive" passHref>
-            <Link sx={{ fontSize: "14px" }}>&#8592; Back to archive</Link>
-          </NextLink>
-        </Box>
         <Box>
           <Heading
+            id={titleSlug}
             sx={{
               fontSize: "16px",
               fontWeight: "normal",
@@ -29,7 +30,7 @@ const ArticlePage = ({ frontMatter, children }) => {
               lineHeight: "1.25em",
             }}
           >
-            <NextLink href={frontMatter.slug} passHref>
+            <NextLink href={`#${titleSlug}`} passHref>
               <Link
                 sx={{
                   ml: -20,
