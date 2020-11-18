@@ -48,13 +48,15 @@ const theme: Partial<Theme> = {
     },
     body: {
       fontWeight: "body",
-      fontSize: "14px",
+      fontSize: "16px",
       fontFamily: "body",
+      lineHeight: "1.25em",
     },
     monospace: {
       fontFamily: "monospace",
-      fontSize: "14px",
+      fontSize: "16px",
       fontWeight: "body",
+      lineHeight: "1.25em",
     },
   },
   forms: {
@@ -72,7 +74,7 @@ const theme: Partial<Theme> = {
       fontWeight: "body",
     },
     h1: {
-      variant: "text.display",
+      variant: "text.display"
     },
     h2: {
       variant: "text.heading",
