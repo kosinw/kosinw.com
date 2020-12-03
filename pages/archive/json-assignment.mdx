@@ -11,34 +11,7 @@ keywords:
 slug: /archive/json
 ---
 
-import { useState, useEffect } from "react";
-import { Styled } from "theme-ui";
-
-export const JSONView = () => {
-  const [articles, setArticles] = useState(null);
-  useEffect(async () => {
-    const data = await fetch("https://firebasestorage.googleapis.com/v0/b/advancedtopicscs.appspot.com/o/blogArticles.json?alt=media&token=478d06a6-d7e5-4cac-a92d-7670dea8de17");
-    const json = await data.json();
-    setArticles(json);
-  }, []);
-  if (!articles) {
-    return <p>Fetching data...</p>;
-  }
-  return (
-    <>
-    {articles.map(article => {
-      return (
-        <>
-          <hr />
-          <Styled.h2>{article.headline}</Styled.h2>
-          <span>by {article.author}</span>
-          <Styled.p dangerouslySetInnerHTML={{__html: article.body}} />
-        </>
-      );
-    })}
-    </>
-  );
-};
+import JSONView from "components/JSONView";
 
 This page is part of an assignment for my high school senior year computer science class. This page loads in articles through an AJAX request and displays them on this page.
 
