@@ -1,5 +1,5 @@
-import { useState, useEffect, Box } from "react";
-import { Styled, Divider } from "theme-ui";
+import { useState, useEffect } from "react";
+import { Styled, Divider, Box } from "theme-ui";
 
 const JSONView: React.FC<{}> = () => {
   const [articles, setArticles] = useState(null);
