@@ -1,9 +1,7 @@
 const title = "kosinw.com";
-const description = "Systems programmer wannabe and anti-OOP revolutionary.";
 
 const SEO = {
   title,
-  description,
   openGraph: {
     type: "website",
     locale: "en_IE",
